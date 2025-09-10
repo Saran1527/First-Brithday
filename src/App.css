@@ -8,6 +8,9 @@
   min-height: 100vh;
 }
 
+.bouncing-title {
+  animation: bounce 2s infinite alternate;
+}
 .floating-balloon:nth-child(3n+1) {
   background: #3399ff;
   animation-duration: 20s;
