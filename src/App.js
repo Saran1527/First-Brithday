@@ -209,7 +209,6 @@ function App() {
     
     <div className="details-card">
       <div className="detail-item">
-        // <div className="detail-icon">📅</div>
         <div className="detail-content">
           <h3>Date & Time</h3>
           <p><strong>15th September 2025</strong></p>
