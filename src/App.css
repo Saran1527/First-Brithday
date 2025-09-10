@@ -8,9 +8,9 @@
   min-height: 100vh;
 }
 
-/* .bouncing-title {
+.bouncing-title {
   animation: bounce 2s infinite alternate;
-} */
+}
 .floating-balloon:nth-child(3n+1) {
   background: #3399ff;
   animation-duration: 20s;
@@ -192,7 +192,7 @@
   overflow: hidden;
   white-space: nowrap;
   margin: 0 auto;
-  animation: typing 3.5s steps(40, end);
+  animation: fadeIn 3s ease-in-out;
   color: #ff4d6d;
 }
 
