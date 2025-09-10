@@ -169,9 +169,7 @@
   z-index: 3;
 }
 
-.bouncing-title {
-  animation: bounce 2s infinite alternate;
-}
+
 
 /* .welcome-title {
   font-size: 3rem;
