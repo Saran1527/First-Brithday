@@ -8,9 +8,6 @@
   min-height: 100vh;
 }
 
-.bouncing-title {
-  animation: bounce 2s infinite alternate;
-}
 .floating-balloon:nth-child(3n+1) {
   background: #3399ff;
   animation-duration: 20s;
@@ -102,10 +99,14 @@
 @keyframes floatUp {
   0% {
     transform: translateY(0) rotate(0deg);
+    opacity: 0.6;
   }
-
+  50% {
+    opacity: 1;
+  }
   100% {
-    transform: translateY(-100vh) rotate(360deg);
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
   }
 }
 
@@ -151,13 +152,11 @@
   }
 }
 
-/* Scroll Animation */
 .scroll-animate {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 1.2s ease-out;
-  position: relative;
-  z-index: 3;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: transform, opacity;
 }
 
 .scroll-animate.visible {
@@ -172,7 +171,9 @@
   z-index: 3;
 }
 
-
+.bouncing-title {
+  animation: bounce 2s infinite alternate;
+}
 
 /* .welcome-title {
   font-size: 3rem;
@@ -183,16 +184,27 @@
 .welcome-title {
   font-size: 3rem;
   color: #ffd633;
-  /* Bright Gold Title */
   text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff1e56;
   animation: glow 2s infinite alternate;
+  opacity: 0;
+  animation: fadeInUp 1.8s ease forwards;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .typing-animation {
   overflow: hidden;
   white-space: nowrap;
   margin: 0 auto;
-  animation: fadeIn 3s ease-in-out;
+  animation: typing 3.5s steps(40, end);
   color: #ff4d6d;
 }
 
@@ -273,7 +285,7 @@
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s ease;
+  transition: all 0.8s ease-in-out;
   height: 280px;
   opacity: 0;
   transform: scale(0.9);
@@ -344,6 +356,13 @@
   /* White, with rainbow background */
 }
 
+.welcome-subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2s ease forwards;
+  animation-delay: 0.8s;
+}
+
 .rainbow {
   background: linear-gradient(to right, #ff4d6d, #ffd633, #33cc99, #4da6ff, #ff4d6d);
   background-size: 200% auto;
@@ -374,13 +393,27 @@
 }
 
 .family-img {
-  width: 360px;
+  width: 280px;
   max-width: 80%;
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   border: 5px solid #fff;
-  transition: transform 0.6s ease;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: zoomInSmooth 2s ease forwards;
+  animation-delay: 1.2s;
 }
+@keyframes zoomInSmooth {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
 
 .family-img:hover {
   transform: scale(1.05) rotate(2deg);
