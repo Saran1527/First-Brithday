@@ -132,19 +132,7 @@ function App() {
   return (
     <div className="app">
       <canvas ref={canvasRef} className="background-canvas"></canvas>
-      <div className="floating-balloons">
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={i}
-            className="floating-balloon"
-            style={{
-              "--i": i,
-              "--x": Math.random() * 100,
-              "--delay": Math.random() * 5,
-            }}
-          ></div>
-        ))}
-      </div>
+     
       <div className="confetti-container"></div>
 
       {/* 🎉 Welcome Section */}
